@@ -216,6 +216,41 @@ nav a:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+#checkpoint-updates{
+    width:700px;
+    height:600px;
+    border-radius:5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: white;
+    display:flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.chekpoint-header{
+    display:flex;
+    margin:10px auto;
+    height:30px;
+    justify-content: center;
+    align-items:center;
+    
+}
+
+.checkpoint-header h1{
+    margin:0 auto;
+    font-family:"Poppins",sans-serif;
+    text-align:center;
+    font-size: 15px;
+}
+.time-to-clear{
+    margin:20px auto;
+    width:600px;
+    border-radius:5px;
+    background-color:black;
+    height:80px;
+}
+
 
 
 
