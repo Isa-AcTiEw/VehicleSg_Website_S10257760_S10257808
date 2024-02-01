@@ -1,37 +1,27 @@
 // API endpoint for creating a new user
-const apiUrl = 'https://api.data.gov.sg/v1/environment/24-hour-weather-forecast';
+const apiUrl = 'https://api.api-ninjas.com/v1/weather?city=';
 
 // Weather data request to be sent
 
-const currentDateTime = getDate();
+const City = "Singapore"
 
 // Send GET request to API endpoint
 
-function getWeatherData(){
-    fetch(apiUrl, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    })
-    /*Get the forecast*/
-    /*Get the temperature*/
-    .then(response => response.json())
-    .then(data =>{
-        const generalObject = data.items["general"]["forecast"]; // Access the nested object
-        console.log(generalObject);
-        
-    });
-
-}
+var city = 'london'
+$.ajax({
+    method: 'GET',
+    url: apiurl + city,
+    headers: { 'X-Api-Key': '64d3a4502249732abb925e4452f68d45'},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+});
 
 //get the current date and time
-function getDate() {
-    let today = new Date();
-    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    let time = today.getHours() + ":" + today.getMinutes();
-    let dateTime = date + 'T' + time;
-    return dateTime;
-}
+
 
 getWeatherData(apiUrl);
