@@ -106,8 +106,9 @@ nav a:hover {
 
 .row{
     display:flex;
-    margin:15px;
+    margin:5px;
     justify-content: space-between;
+    
 }
 
 
