@@ -7,7 +7,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://datamall2.mytransport.sg/ltaodataservice/EstTravelTimes", requestOptions)
+fetch("http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));

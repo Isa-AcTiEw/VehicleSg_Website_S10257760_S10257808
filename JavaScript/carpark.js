@@ -25,16 +25,10 @@ searchButton.addEventListener('click', function(event) {
     event.preventDefault(); // prevent the form from submitting
     inputValue = inputField.value; // retrieve the input value
     console.log(inputValue);
+    
 
     // send HTTP request to the API using the user's input
 });
 
-//Retrieve today's date and time
-
-var CurrentDateTime = new Date();
-
-var formattedDateTime = CurrentDateTime.toISOString().slice(0, 19);
-
-console.log(formattedDateTime);
 
 
