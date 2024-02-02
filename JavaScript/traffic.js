@@ -2,7 +2,7 @@ var api_key = "jRHACKiESaGsYNOFNdxSKw==";
 var apiurl = "http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2";
 
 api_url = `${apiurl}?AccessKey=${api_key}`;
-condsole.log(apiurl)
+console.log(apiurl)
 fetch(apiUrl)
   .then(response => {
     // Check if the request was successful (status code 200-299)
