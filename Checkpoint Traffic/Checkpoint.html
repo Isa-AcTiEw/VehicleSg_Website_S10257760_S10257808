@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint Traffic</title>
+</head>
+<body>
+
+    <div id="result-container"></div>
+
+    <script>
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+        
+        fetch("https://api.data.gov.sg/v1/transport/traffic-images", requestOptions)
+        .then(response => response.text())
+        .then(result => {document.getElementById("result-container").innerHTML = result;
+            })
+        .catch(error => console.log('error', error));
+
+        function updateImages() {
+            const camera1Url = "https://your-api-endpoint-for-camera-1";
+            const camera2Url = "https://your-api-endpoint-for-camera-2";
+
+            document.getElementById('camera1').src = camera1Url + "?timestamp=" + new Date().getTime();
+            document.getElementById('camera2').src = camera2Url + "?timestamp=" + new Date().getTime();
+        }
+
+        updateImages();
+
+        setInterval(updateImages, 10000); 
+    </script>
+
+<div>
+    <img src="https://images.data.gov.sg/api/traffic-images/2024/02/4947c2d8-b640-4a5d-b566-e86da3ef9907.jpg" alt="Camera 1">
+</div>
+
+</body>
+</html>
+
+
 
