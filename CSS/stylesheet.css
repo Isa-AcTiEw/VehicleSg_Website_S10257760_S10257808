@@ -28,7 +28,7 @@ nav a:hover {
     color: white;
   }
 
-.weather-information{
+/* .weather-information{
     background-color: blue;
     height:12rem;
     width:120rem;
@@ -41,7 +41,7 @@ nav a:hover {
 .weather-information.PSI{
     font-size: 15px;
     font-family: "Poppins",sans-serif;
-}
+} */
 
 .text-content-weather{
     font-style: italic;
@@ -251,6 +251,46 @@ nav a:hover {
     height:80px;
 }
 
+#Quiz{
+    position: relative;
+    background:linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(252,182,29,1) 100%);
+    width:700px;
+    height:500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.quiz-cta{
+    text-align: center;
+    font-size:30px;
+    font-family:"Poppins",sans-serif;
+
+}
+
+.quiz-cta img{
+    margin:10px auto;
+    width:100px;
+    height:100px;
+}
+
+.quiz-bttn{
+    margin:10px auto;
+    width:300px;
+    height:40px;
+    border-radius:5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+
+footer{
+    border-radius: 5px;
+    width:100%;
+}
 
 
 
