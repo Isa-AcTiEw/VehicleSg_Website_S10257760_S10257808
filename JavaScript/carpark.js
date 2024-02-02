@@ -27,8 +27,48 @@ searchButton.addEventListener('click', function(event) {
     console.log(inputValue);
     
 
-    // send HTTP request to the API using the user's input
+    
 });
+
+
+var carparkObj;
+// send HTTP request to the API using the user's input
+function processData(inputValue,carparkObj){
+    // GET METHOD to return an array of javascript objects
+    var myHeaders = new Headers();
+    myHeaders.append("AccountKey", "jRHACKiESaGsYNOFNdxSKw==");
+    
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+        };
+
+    fetch("http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2", requestOptions)
+    .then(response => {
+    if (!response.ok) {
+    throw new Error('Network response was not ok');
+    }
+    return response.text();
+    })
+    .then(result => {
+    console.log(result);
+    // Continue processing the result as needed
+    })
+    .catch(error => {
+    console.log('Error:', error);
+    // Handle errors here
+    });
+   
+
+
+    // check if userinput is inside the array address or 
+}
+
+processData(inputValue,carparkObj)
+
+var myHeaders = new Headers();
+myHeaders.append("AccountKey", "jRHACKiESaGsYNOFNdxSKw==");
 
 
 

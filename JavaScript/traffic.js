@@ -1,64 +1,66 @@
-var myHeaders = new Headers();
-myHeaders.append("AccountKey", "jRHACKiESaGsYNOFNdxSKw==");
+// var myHeaders = new Headers();
+// myHeaders.append("AccountKey", "jRHACKiESaGsYNOFNdxSKw==");
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
+// var requestOptions = {
+//   method: 'GET',
+//   headers: myHeaders,
+//   redirect: 'follow'
+// };
+
+// fetch("http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents", requestOptions)
+//   .then(response => response.json())
+//   .then (data => {
+//     console.log(data);
+//     traffic = data
+//   })
 
 
-var trafficdoc = document.getElementsByClassName('traffic-updates')
+var trafficdoc = document.getElementById('traffic-updates')
 console.log(trafficdoc)
 var trafficObj;
-fetch("http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents", requestOptions)
-  .then(response => response.json())
-  .then (data => {
-    console.log(data);
-    traffic = data
-  });
+
   
-trafficObj.array.forEach(element => {
-    const container = document.createElement('div')
-    container.ClassName = 'traff-container'
-    if(element.Type = "RoadWork"){
-        image = document.createElement('img')
-        paratext = document.createElement('p')
-        paratext.textContent = element.Message
-        container.appendChild(image)
-        container.appendChild(paratext)
-        trafficdoc.appendChild(container)
 
 
-    }
 
-    else if(element.Type == "Vehicle Breakdown"){
-        image = document.createElement('img')
-        paratext = document.createElement('p')
-        paratext.textContent = element.Message
-        container.appendChild(image)
-        container.appendChild(paratext)
-        trafficdoc.appendChild(container)
-    }
+"use-strict"
+import users from '../DataFiles/traffic-incidents.json' assert {type: 'json'}
+trafficObj = users.value
 
-    else if(element.Type == "Accident"){
-        image = document.createElement('img')
-        paratext = document.createElement('p')
-        paratext.textContent = element.Message
-        container.appendChild(image)
-        container.appendChild(paratext)
-        trafficdoc.appendChild(container)
-    }
+console.log(typeof trafficObj); // Outputs: "object"
 
-    else{
-        heading = document.createElement(h1)
-        heading.textContent = element.Type
-        updatespara = document.createElement('p')
-        updatespara.textContent = element.Message
-        container.appendChild(heading)
-        container.appendChild(updatespara)
-        trafficdoc.appendChild(container)
-    }
-});
-  
-  
+for(var i = 0; i<trafficObj.length ;i++){
+    console.log(trafficObj[i]);
+}
+
+    // fix create div and append to div 
+    trafficObj.forEach(element => {
+        if (element !== null) {
+            console.log("Not null");
+        }
+    
+        const container = document.createElement('div');
+        container.className = 'traff-container';
+    
+        // once its fixed remember to replace with api caling and add other categories
+        if (element.Type == "Roadwork") {
+            const image = document.createElement('img')
+            image.src = "Assets/traffic_1 1.png"
+            const paratext = document.createElement('p')
+            paratext.textContent = element.Message.replace(/^\(\d+\/\d+\)/, '').trim()
+            console.log(paratext)
+            container.appendChild(image)
+            container.appendChild(paratext);
+            trafficdoc.appendChild(container);
+            console.log(container)
+            
+        }
+    });
+
+
+    
+    
+
+
+
+console.log(trafficdoc)
