@@ -28,7 +28,7 @@ nav a:hover {
     color: white;
   }
 
-.weather-information{
+/* .weather-information{
     background-color: blue;
     height:12rem;
     width:120rem;
@@ -41,7 +41,7 @@ nav a:hover {
 .weather-information.PSI{
     font-size: 15px;
     font-family: "Poppins",sans-serif;
-}
+} */
 
 .text-content-weather{
     font-style: italic;
