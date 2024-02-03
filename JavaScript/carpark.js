@@ -25,11 +25,15 @@ searchButton.addEventListener('click', function(event) {
     event.preventDefault(); // prevent the form from submitting
     inputValue = inputField.value; // retrieve the input value
     console.log(inputValue);
-    
-
+    retrievedata(carparknumbers,inputValue);
     
 });
 
+function someFunction() {
+    console.log("Value outside the event listener:", inputValue);
+}
+
+someFunction();
 
 // var carparkObj;
 // // send HTTP request to the API using the user's input
@@ -67,31 +71,39 @@ searchButton.addEventListener('click', function(event) {
 
 
 
-var myHeaders = new Headers();
-myHeaders.append("AccountKey", "jRHACKiESaGsYNOFNdxSKw==");
 
 // call carpark availability api
 
 // retrieve all the carpark number with their corresponding lots available and store in js object
-
-function retrievedata(){
+carparknumbers = []
+function retrievedata(carparknumbers,inputValue){
     fetch("DataFiles/HDBCarparkInformation.csv")
     .then(response => response.text())
     .then(data => {
-        const lines = data.split('\n')
+        const lines = data.split('\n');
         const carparkinfo = lines.splice(1);
-        carparkinfo.forEach(element =>{
+        for(var i = 0; i < carparkinfo.length; i++){
+            var data = carparkinfo[i].split(',');
+            address = data[1];
+            if(address.includes(inputValue.toUpperCase())){
+                carparknumber = data[0];
+                console.log(carparknumbers)
+                carparknumbers.push(carparknumber);
+            }
             
         }
+        console.log(carparknumbers.length);
 
-        )
     })
     .catch(error => console.error('Error:', error));
     
 }
+
+
     
 
-retrievedata()
+
+
 
   
   fetch("https://api.data.gov.sg/v1/transport/carpark-availability")
