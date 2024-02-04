@@ -85,4 +85,36 @@ nav a:hover {
     position: absolute;
 
  }
+
+ .expressway-cameras{
+    margin-top:15px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+ }
+
+ .expressway-cameras h1{
+    font-family: "Poppins",sans-serif;
+    font-size: 30px;
+ }
+
+ .traffic-cameras{
+    display:flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
+ }
+
+.col-md-6{
+    display:flex;
+    flex-direction: column;
+    width:700px;
+    height: auto;
+}
+
+.card{
+    width:700px;
+    height:700px;
+}
+
 /* Footer */
