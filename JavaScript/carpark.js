@@ -20,12 +20,22 @@ var inputField = document.querySelector('.form-control');
 var searchButton = document.querySelector('.btn-outline-success');
 let inputValue;
 
-// Then, add an event listener to the button
+//Then, add an event listener to the button
 searchButton.addEventListener('click', function(event) {
     event.preventDefault(); // prevent the form from submitting
-    inputValue = inputField.value; // retrieve the input value
-    console.log(inputValue);
-    retrievedata(carparknumbers,inputValue);
+    inputValue = inputField.value;
+    if(inputValue != ""){
+        retrievedata(carparkcsvObj,inputValue)
+        retrivelots(carparkcsvObj)
+        
+    }
+    else{
+        alert("Please enter the carpark address")
+    }
+    
+    
+    
+
     
 });
 
@@ -75,8 +85,8 @@ someFunction();
 // call carpark availability api
 
 // retrieve all the carpark number with their corresponding lots available and store in js object
-carparknumbers = []
-function retrievedata(carparknumbers,inputValue){
+carparkcsvObj = []
+function retrievedata(carparkcsvObj,inputValue){
     fetch("DataFiles/HDBCarparkInformation.csv")
     .then(response => response.text())
     .then(data => {
@@ -87,26 +97,53 @@ function retrievedata(carparknumbers,inputValue){
             address = data[1];
             if(address.includes(inputValue.toUpperCase())){
                 carparknumber = data[0];
-                console.log(carparknumbers)
-                carparknumbers.push(carparknumber);
+                const caraprkinfo = {
+                    "Address":address,
+                    "CarparkNumber": carparknumber,
+                    "Lotsavail": 0
+                }
+                carparkcsvObj.push(caraprkinfo)
+
+                
+
             }
             
         }
-        console.log(carparknumbers.length);
+        return carparkcsvObj
 
     })
     .catch(error => console.error('Error:', error));
     
 }
+// Declare carparknumbers outside the function
+console.log(carparkcsvObj);
+// Add an event listener to the button
 
 
-    
 
-
-
-
-  
-  fetch("https://api.data.gov.sg/v1/transport/carpark-availability")
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+function retrivelots(carparkcsvObj){
+    fetch("https://api.data.gov.sg/v1/transport/carpark-availability", requestOptions)
     .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    .then(data => {
+        const items = JSON.parse(data).items[0];
+        const carpark_data = items.carpark_data;
+        carpark_data.forEach(element => {
+            carparkcsvObj.forEach(obj =>{
+                if(element.carpark_number == obj.CarparkNumber){
+                    
+                    obj.Lotsavail = element.carpark_info[0].lots_available
+                    
+                }
+            })
+        return carparkcsvObj
+        });
+    })
+    
+}
+
+console.log(carparkcsvObj);
+
