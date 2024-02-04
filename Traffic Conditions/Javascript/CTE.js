@@ -102,6 +102,17 @@ async function fetchData() {
     });
   }
 
+var link = document.getElementById("CTE");
+var container = document.getElementsByClassName("row g-2")
+console.log(container);
+
+// it works
+console.log(link);
+link.addEventListener('click',function loadData(cteData){
+  const clonetraffcam = document.querySelector('.col-md-6').cloneNode(true);
+  console.log(clonetraffcam);
+  container[0].appendChild(clonetraffcam);
+});
 
 
 
