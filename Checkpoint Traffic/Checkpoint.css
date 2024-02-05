@@ -1,0 +1,56 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:15px;
+    border-radius: 5px;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    padding:15px;
+}
+
+.nav-item a{
+    font-style: "Lato", sans-serif;
+    font-size:20px;
+    margin: 0 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.nav-item a:hover {
+    background-color: rgba(24, 110, 209,0.5);
+    color: rgb(255, 255, 255);
+}
+
+#result-container {
+    margin-top: 10%;
+}
+
+
+.row{
+    justify-content: center;
+    margin: 60px;
+    display: flex;
+
+}
+
+.card {
+    margin-top: 60px;
+    background-color: rgba(24, 110, 209, 0.5);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    overflow: hidden;
+}    
+
+.trf-desc, .timestamp {
+    text-align: center;
+}
+
+.img-fluid {
+    width: 100%; 
+    height: auto; 
+}

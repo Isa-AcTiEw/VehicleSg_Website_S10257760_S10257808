@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "C:\\Users\\admin\\OneDrive\\Documents\\GitHub\\VehicleSg_Website_S10257760_S10257808-1\\index.html",
+            "url": "C:\\Users\\admin\\OneDrive\\Documents\\GitHub\\VehicleSg_Website_S10257760_S10257808\\index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
