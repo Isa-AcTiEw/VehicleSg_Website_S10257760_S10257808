@@ -244,17 +244,16 @@ nav{
 }
 
 #Quiz{
-    position: absolute;
     background:linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(252,182,29,1) 100%);
     width:700px;
     height:500px;
     display:flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     border-radius: 30px;
     bottom: 10%;
-    margin-left: 118px;
+    margin: 0 auto; 
 }
 
 .quiz-cta{
