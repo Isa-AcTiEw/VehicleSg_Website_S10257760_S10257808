@@ -103,7 +103,44 @@ async function fetchData() {
   }
 
 
+link = document.getElementById('CTE');
 
+link.addEventListener('click', function() {
+  createData(cteData);
+});
 
-  
-
+function createData(cteData) {
+  var container = document.getElementById('traff-row')
+  console.log(container);
+  console.log(cteData);
+  console.log(container);
+  cteData.forEach(cams => {
+    column = document.createElement('div');
+    column.className = 'col-md-6';
+    card = document.createElement('div');
+    card.className = 'card';
+    cardHeader = document.createElement('div');
+    cardHeader.className = 'card-text p-3 border-box bg-light';
+    cardImage = document.createElement('div');
+    cardImage.className = "card-img";
+    heading = document.createElement('h1');
+    heading.textContent = cams.Location;
+    cardHeader.appendChild(heading);
+    image = document.createElement('img');
+    image.setAttribute('src', cams.image);
+    cardImage.appendChild(image);
+    cardTimestamp = document.createElement('div');
+    cardTimestamp.className = "card-text p-3 border-box bg-light";
+    cardTimestamp.id = "card-timestamp";  
+    time = new Date(cams.timestamp).toLocaleString();
+    timetext = document.createElement('h2');
+    timetext.textContent = time;
+    cardTimestamp.appendChild(timetext);
+    card.appendChild(cardHeader);
+    card.appendChild(cardImage);
+    card.appendChild(cardTimestamp);
+    column.appendChild(card);
+    container.appendChild(column);
+    
+  });
+}
