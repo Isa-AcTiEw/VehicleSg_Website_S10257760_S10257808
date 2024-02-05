@@ -23,7 +23,20 @@ var searchButton = document.querySelector('.btn-outline-success');
 var inputValue = "";
 //Then, add an event listener to the button
 searchButton.addEventListener('click', async function(event) {
-    event.preventDefault(); // prevent the form from submitting
+    event.preventDefault();
+    // Assuming 'parentdiv' is the container holding carpark-content divs
+    var parentdiv = document.getElementById('carpark-availability');
+
+// Select all elements with the class 'carpark-content' within the parent
+    var carparkDivs = parentdiv.querySelectorAll('.carpark-content');
+
+// reset all carpark divs
+    carparkDivs.forEach(function(carparkDiv) {
+        carparkDiv.remove();
+    });
+
+    
+     // prevent the form from submitting
     inputValue = inputField.value;
     if(inputValue != ""){
         retrievedata(inputValue)
@@ -34,9 +47,13 @@ searchButton.addEventListener('click', async function(event) {
             .then(result =>{
                 var carpark = result
                 loadData(resultdata,carpark)
+                addtoPage(resultdata);
+                
+                
             })
 
-            addtoPage(resultdata)
+            
+            
         })
         
         
@@ -54,9 +71,34 @@ searchButton.addEventListener('click', async function(event) {
 });
 
 
-function addtoPage(resultdata){
+function addtoPage(resultdata) {
+    
+    var parentdiv = document.getElementById('carpark-availability')
+    
+    console.log(parentdiv)
 
+    resultdata.forEach(element => {
+        var container = document.createElement('div');
+        container.className = 'carpark-content'
+        var locationDiv = document.createElement('div');
+        locationDiv.className = 'location';
+        locationDiv.innerHTML = `<h1>${element.Address}</h1>`;
+
+        var lotsAvailableDiv = document.createElement('div');
+        lotsAvailableDiv.className = 'lots-available'
+        lotsAvailableDiv.innerHTML = `<h1>${element.Lotsavail}</h1>`;
+
+        // Append the new div elements to the container
+        container.appendChild(locationDiv);
+        container.appendChild(lotsAvailableDiv);
+        parentdiv.appendChild(container);
+        
+        
+    });
+    
 }
+
+
 
 
 function loadData(resultdata,carpark){
@@ -73,7 +115,7 @@ function loadData(resultdata,carpark){
     });
     return resultdata;
 }
-someFunction();
+
 
 // var carparkObj;
 // // send HTTP request to the API using the user's input
