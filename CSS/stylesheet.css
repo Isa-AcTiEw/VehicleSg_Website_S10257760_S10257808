@@ -214,15 +214,31 @@ nav{
     margin: 10px auto;
 }
 
-.lots-avail{
+.carpark-content{
     width:600px;
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding:5px 5%;
+    height: auto;
     border-radius:5px;
     background:white;
     margin: 25px auto;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.loaction{
+    width:450px;
+    
+}
+.location h1{
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+}
+
+.lots-available h1{
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+}
 #checkpoint-updates{
     width:700px;
     height:600px;

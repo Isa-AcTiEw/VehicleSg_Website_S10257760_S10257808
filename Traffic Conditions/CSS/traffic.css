@@ -125,6 +125,7 @@ nav a:hover {
 .card{
     width:500px;
     height:515px;
+    position: relative;
 }
 
 .card-header h2{
@@ -150,8 +151,12 @@ nav a:hover {
 }
 
 #card-timestamp {
-   font-size: 15px;
-   width:500px;
+   width:499px;
+   position: absolute;
+   bottom:0;
    border-radius: 5px;
-   margin:0px;
+}
+
+#card-timestamp h2{
+   font-size: 20px;
 }
