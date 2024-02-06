@@ -39,8 +39,8 @@ var cteData = [
 
     {
         "Location":"Chin Swee Road Entrance",
-        "Latitude": 1.28036584335876,
-        "Longitude": 103.830451146503,
+        "Latitude": 1.28569398886979,
+        "Longitude": 103.837524510188
     },
 
     {
