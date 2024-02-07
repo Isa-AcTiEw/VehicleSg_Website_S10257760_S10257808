@@ -53,27 +53,27 @@ fetch('https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/16/js
 const data = JSON.stringify(false);
       
 const xhr = new XMLHttpRequest(); 
-function createPopUp(response){
-    console.log(response);
-    response.forEach(element =>{
-        console.log(element);
-        var lat = element.LATITUDE;
-        var long = element.LONGITUDE
-        var location = element.NAME
-        var customIcon = L.icon({
-            iconUrl: "traff-assets/Speed_Camera_jpg.svg", // URL of the marker icon/image
-            iconSize: [30, 30], // Size of the icon
-            popupAnchor: [0, -15] // Offset of the popup relative to the icon
-        });
-        var marker = L.marker([lat, long],{icon: myIcon}).addTo(map);
-        var popupContent = `
-        <div>
-            <p>${location}</p>
-        </div>
 
-    `;
-    marker.bindPopup(popupContent);
-    })
+function createPopUp(response){
+    console.log(response.SrchResults);
+    
+    //     var lat = element.LATITUDE;
+    //     var long = element.LONGITUDE
+    //     var location = element.NAME
+    //     var customIcon = L.icon({
+    //         iconUrl: "traff-assets/Speed_Camera_jpg.svg", // URL of the marker icon/image
+    //         iconSize: [30, 30], // Size of the icon
+    //         popupAnchor: [0, -15] // Offset of the popup relative to the icon
+    //     });
+    //     var marker = L.marker([lat, long],{icon: myIcon}).addTo(map);
+    //     var popupContent = `
+    //     <div>
+    //         <p>${location}</p>
+    //     </div>
+
+    // `;
+    // marker.bindPopup(popupContent);
+    // })
 }
 xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
