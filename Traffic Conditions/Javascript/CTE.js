@@ -106,7 +106,12 @@ async function fetchData() {
 link = document.getElementById('CTE');
 
 link.addEventListener('click', function() {
+  var targetdiv = document.getElementById("traff-row")
+  targetdiv.innerHTML = ''; // Clear the content of targetdiv
+  
   createData(cteData);
+
+ 
 });
 
 function createData(cteData) {
