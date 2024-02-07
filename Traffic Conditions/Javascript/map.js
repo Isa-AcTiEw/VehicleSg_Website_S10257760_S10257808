@@ -49,31 +49,38 @@ fetch('https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/16/js
 
 
 
+
       
 const data = JSON.stringify(false);
       
 const xhr = new XMLHttpRequest(); 
 
 function createPopUp(response){
-    console.log(response.SrchResults);
-    
-    //     var lat = element.LATITUDE;
-    //     var long = element.LONGITUDE
-    //     var location = element.NAME
-    //     var customIcon = L.icon({
-    //         iconUrl: "traff-assets/Speed_Camera_jpg.svg", // URL of the marker icon/image
-    //         iconSize: [30, 30], // Size of the icon
-    //         popupAnchor: [0, -15] // Offset of the popup relative to the icon
-    //     });
-    //     var marker = L.marker([lat, long],{icon: myIcon}).addTo(map);
-    //     var popupContent = `
-    //     <div>
-    //         <p>${location}</p>
-    //     </div>
+    var results = response.SrchResults
+    console.log(results);
+    for(var i = 1; i<results.length; i++){
+      var lat = results[i].LATITUDE
+      var long = results[i].LONGITUDE
+      var location = results[i].NAME
+      var customIcon = L.icon({
+          iconUrl: "traff-assets/Speed_Camera_jpg.svg", // URL of the marker icon/image
+          iconSize: [30, 30], // Size of the icon
+          popupAnchor: [0, -15] // Offset of the popup relative to the icon
+      });
+      var marker = L.marker([lat, long],{icon: customIcon}).addTo(map);
+      var popupContent = `
+      <div>
+          <p>${location}</p>
+      </div>
 
-    // `;
-    // marker.bindPopup(popupContent);
-    // })
+  `;
+  marker.bindPopup(popupContent);
+  marker.openPopup();
+    }
+    
+    
+    
+    
 }
 xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
@@ -92,10 +99,9 @@ xhr.addEventListener("readystatechange", function () {
       xhr.open("GET", "https://www.onemap.gov.sg/api/public/themesvc/retrieveTheme?queryName=spf_fsc");
       
       
-xhr.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYWFmZWQwNWUzNGZjOTA5MzRhM2I1NjY0MGY3ZjQyYSIsImlzcyI6Imh0dHA6Ly9pbnRlcm5hbC1hbGItb20tcHJkZXppdC1pdC0xMjIzNjk4OTkyLmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS92Mi91c2VyL3Bhc3N3b3JkIiwiaWF0IjoxNzA3MDQ3NTIzLCJleHAiOjE3MDczMDY3MjMsIm5iZiI6MTcwNzA0NzUyMywianRpIjoicUxQQ2pkZnp1enZnRFkyRiIsInVzZXJfaWQiOjIzMjgsImZvcmV2ZXIiOmZhbHNlfQ.9EFoXkhg3rd1CMQfA5LxwrzatUxqqQyIYgNmfVCUUgU");
+xhr.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjYWFmZWQwNWUzNGZjOTA5MzRhM2I1NjY0MGY3ZjQyYSIsImlzcyI6Imh0dHA6Ly9pbnRlcm5hbC1hbGItb20tcHJkZXppdC1pdC0xMjIzNjk4OTkyLmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS92Mi91c2VyL3Nlc3Npb24iLCJpYXQiOjE3MDczMDc4NDcsImV4cCI6MTcwNzU2NzA0NywibmJmIjoxNzA3MzA3ODQ3LCJqdGkiOiJyeDdiNDhKOWZSeWZ5ejBIIiwidXNlcl9pZCI6MjMyOCwiZm9yZXZlciI6ZmFsc2V9._LMC-twQiNIIJqWZAYhhu382580E9T3nvAVH-EFf_Rk");
       
 xhr.send(data);
-console.log(traffcam);
 
 
 //Get all themes
