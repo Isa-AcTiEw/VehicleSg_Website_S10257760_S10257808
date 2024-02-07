@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+*
+{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
+}
+
+#header {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.logo {
+    color: #4954c7;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 5px;
+    color: rgba(24, 110, 209);
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active{
+    background-color: rgba(24, 110, 209,0.5);
+    color: rgb(255, 255, 255);
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: "" ;
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(124, 164, 255) transparent);
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top:50;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    pointer-events: none;
+}
+
+section #text {
+    position: absolute;
+    color: #3a43ac;
+    font-size: 12vw;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: "Rancho", cursive;
+    transform: translateY(-15%)
+}
+
+section #text span{
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 25px;
+    background-color: rgb(124, 164, 255);
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(150px);
+}
+
+
+.sec h2 {
+    font-size: 60px;
+    color: #ffffff ;
+    margin-bottom: 10px;
+    font-family: "Poppins", cursive;
+}
+
+.sec p {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+    transition: all .3s;
+}
+
+.sec {
+    position: relative;
+    padding: 100px;    
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(40deg, #4158D0 0%, #7CB9E8 46%, #F0F8FF 100%);
+    width: 100%;
+    min-height: 170vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.container {
+    top:10%;
+    width: 80%;
+    display: block;
+    flex-direction: column;
+    background: rgba(65, 150, 176, 0.28);
+    border-radius: 20px 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(159, 225, 212, 0.27);
+    padding: 5px;
+    transform: scale(1);
+    position: absolute;
+    overflow: hidden;
+}
+
+.hide-question {
+    transform: scale(0);
+}
+
+.container .quiz {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.quiz .status-time {
+    background: #002D62;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+.quiz .status-time .time {
+    background-color: #F0F8FF;
+    color: #000;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.main-question img {
+    width: 200px ;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main-question {
+    font-size: 20px;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main-question .question {
+    font-size: 24px;
+    margin: 0 10px 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.answer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.answer-container .answer {
+    background-color: #7CB9E8;
+    padding: 10px 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.answer-container .rightAnswer {
+    background-color: rgb(54, 201, 91);
+    color: black;
+}
+
+.answer-container .noAnswer {
+    background-color: rgb(248, 80, 80);
+    color: white;
+}
+
+.answer-container .answer:hover {
+    background-color: #002D62;
+    color: white;
+}
+
+.answer-container .rightAnswer:hover {
+    background-color: black;
+    color: white;
+
+}
+
+.answer-container .noAnswer:hover {
+    background-color: rgb(248, 80, 80);
+    color: #000;
+}
+
+.answer-container .answer.disable {
+    pointer-events: none;
+}
+
+.container .footer {
+    width: 100%;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.footer p {
+    font-size: 18px;
+}
+
+.footer p span {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 8px;
+    border-radius: 50%;
+}
+
+.footer .next-Question {
+    color: #fff;
+    background-color: #002D62;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    opacity: .8;
+    transform: scale(0);
+    position: absolute;
+    right: 30px;
+}
+
+.footer .end-Ques {
+    color: #fff;
+    background-color: #002D62;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    opacity: 1;
+    transform: scale(0);
+}
+
+.footer .next-Question:hover {
+    opacity: 1;
+}
+
+.footer .show-next {
+    transform: scale(1);
+}
+
+.footer .show-end {
+    transform: scale(1);
+}
+
+.result-box  {
+    top: 5%;
+    width: 760px;
+    display: flex;
+    align-items: center;
+    flex-direction: flex;
+    background-color: #7CB9E8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 25px;
+    padding: 15px;
+    transform: scale(0);
+    position: absolute;
+}
+
+.show-result {
+    transform: scale(1);
+}
+
+.result-box .message {
+    right: 10%;
+    top:15%;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 2px;
+
+}
+
+.result-right,
+.of-question {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 10px;
+    border-radius: 50%;
+}
+
+.restart-Ques {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    color: #fff;
+    background-color: rgb(0, 155, 211);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.restart-Ques:hover {
+    transform: scale(1.25);
+}
+
+@media screen and (max-width:800px) {
+
+    .container{
+        width:100%;
+    }
+
+    .main-question {
+        padding: 10px 10px;
+    }
+
+    .answer-container .answer {
+        padding: 10px 20px;
+    }
+
+    .header p {
+        padding: 10px 10px;
+    }
+
+    .main-question .question {
+        font-size: 20px;
+    }
+
+    .answer-container .answer {
+        font-size: 18px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+
+    .result-box {
+        width: 400px;
+        height: 500px;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .restart-Ques {
+        bottom:5%
+    }
+}

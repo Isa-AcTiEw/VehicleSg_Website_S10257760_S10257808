@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel = "stylesheet" type="text/css" href = "Quiz.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header id = "header"> 
+        <a href ="#" class = "logo">VehicleSG</a>
+        <ul>
+            <li><a href = "../index.html" target ="_blank"> Home</a></li>
+            <li><a href = "../Carpark Availabilty/Carpark.html" target ="_blank"> Carpark Availability</a></li>
+            <li><a href = "../Checkpoint Traffic/Checkpoint.html" target ="_blank"> Checkpoint Traffic</a></li>
+            <li><a href = "../Traffic Conditions/Traffic.html" target ="_blank"> Traffic conditions</a></li>
+            <li><a href = "#" class = "active"> Quiz</a></li>
+        </ul>
+        </header>
+        <section>
+            <h2 id = "text"><span>How well do you know our</span><br> Roads?</h2>
+            <img src = "quiz-assets/bird1.png" id = "bird1">
+            <img src = "quiz-assets/bird2.png" id = "bird2">
+            <img src = "quiz-assets/forest.png" id = "skyline">
+            <img src = "quiz-assets/rocks.png" id = "rocks">
+            <img src = "quiz-assets/water.png" id = "water">
+            <a href = "#" id ="btn">Test yourself!</a>
+
+        </section>
+        <div class = "sec">
+            <div class="container">
+                <header class="quiz">
+                    <h2>Quiz</h2>
+                    <p class="status-time">Time:<span class="time">30</span></p>
+                </header>
+                <main class="main-question">
+                    <div class="question"></div>
+                    <div class="answer-container"></div>
+                </main>
+                <footer class="footer">
+                    <p><span class="first"></span> of <span class="last"></span> Question</p>
+                    <a class="next-Question" href="#">next</a>
+                    <a class="end-Ques" href="#">End Quiz</a>
+                </footer>
+            </div>
+
+            <div class="result-box">
+                <div class="cup">
+                    <lottie-player class = "animation" src="https://lottie.host/2b87e434-2d97-4803-b7b3-42b1dd4d5629/VP8TyTyMv8.json" background="transparent" speed="1" style="width: 230px; height: 230px" loop autoplay direction="1" mode="normal"></lottie-player>
+                </div>
+                <div class="message">
+                    <p class="message-text"></p>
+                    <p> You got
+                        <span class="result-right"></span>
+                        out of
+                        <span class="of-question"></span>
+                    </p>
+                </div>
+                <a href="#" class="restart-Ques">Restart Quiz</a>
+            </div>        
+            <script src="questions.js"></script>
+            <script src="app.js"></script>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        </div>
+
+        <script>
+            let text = document.getElementById("text");
+            let bird1 = document.getElementById("bird1");
+            let bird2 = document.getElementById("bird2");
+            let btn = document.getElementById("btn");
+            let rocks = document.getElementById("rocks");
+            let skyline = document.getElementById("skyline");
+            let water = document.getElementById("water");
+            let header = document.getElementById("header");
+
+            window.addEventListener("scroll", function(){
+                let value = window.scrollY;
+
+                text.style.top = 50 + value * -0.5 + "%";
+                bird1.style.top = value * -1.5 + 'px';
+                bird1.style.left = value * 2 + 'px';
+                bird2.style.top = value * -1.5 + 'px';
+                bird2.style.left = value * -5 + 'px';
+                bird1.style.top = value * -1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                bird1.style.top = value * -1.5 + 'px';
+                rocks.style.top = value * -0.12 + 'px';
+                skyline.style.top = value * 0.25 + 'px';
+                header.style.top = value * -0.5 + 'px';
+            })
+
+        </script>
+    </body>
+</html>
