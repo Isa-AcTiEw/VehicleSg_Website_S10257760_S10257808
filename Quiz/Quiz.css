@@ -15,10 +15,6 @@ body {
 }
 
 #header {
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
     padding: 30px 100px;
     display: flex;
     justify-content: space-between;
@@ -26,10 +22,10 @@ body {
     z-index: 10000;
 }
 
-.logo {
+#header .logo {
     color: #4954c7;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 24px;
     text-decoration: none;
 }
 
@@ -385,6 +381,24 @@ section #text span{
 
 @media screen and (max-width:800px) {
 
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #header ul {
+        margin-top: 20px;
+    }
+
+    #header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #header p {
+        padding: 10px 10px;
+    }
+
     .container{
         width:100%;
     }
@@ -395,10 +409,6 @@ section #text span{
 
     .answer-container .answer {
         padding: 10px 20px;
-    }
-
-    .header p {
-        padding: 10px 10px;
     }
 
     .main-question .question {

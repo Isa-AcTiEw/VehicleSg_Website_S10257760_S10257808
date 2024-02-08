@@ -118,18 +118,43 @@ section #text span{
     transform: translateY(150px);
 }
 
-
 .sec {
     position: relative;
     padding: 100px;    
     font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(40deg, #4158D0 0%, #7CB9E8 46%, #F0F8FF 100%);
     width: 100%;
-    min-height: 170vh;
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 100px;
+}
+
+.sec h1{
+    text-align: center;
+}
+
+.sec p {
+    font-size: 20px;
+}
+
+.container {
+    top:10%;
+    width: 80%;
+    display: block;
+    flex-direction: column;
+    background: rgba(65, 150, 176, 0.28);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(159, 225, 212, 0.27);
+    color: #ffffff;
+    padding: 15px;
+    transform: scale(1);
+    position: absolute;
+    overflow: hidden;
 }
 
 
@@ -139,6 +164,26 @@ footer{
     width:100%;
 }
 
+@media screen and (max-width:800px) {
+
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #header ul {
+        margin-top: 20px;
+    }
+
+    #header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #header p {
+        padding: 10px 10px;
+    }
+}
 
 
 
