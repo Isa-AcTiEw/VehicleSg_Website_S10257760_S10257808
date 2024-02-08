@@ -52,6 +52,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
   **For mapping the police cameras location on the map in the traffic conditions page**
 - OneMap Authentication API from [OneMap](https://www.onemap.gov.sg/apidocs/apidocs/#getAllThemeInfo)
   **Retrieve authentication details for account registered with OneMap**
+- DataMall Traffic Incidents API from [DataMall LTA](https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html)
 
 
 
@@ -65,7 +66,7 @@ For any scenarios that have not been automated, test the user stories manually a
     2. Try to submit the empty search field and alert message appear telling users you are unable to submit and empty request
     3. Once submitting an address in the search field results are shown
 
-    ###Bugs
+    ### Bugs
     - Once submitted an error appears due to unhandles promise in .then() statement rendering the next input as undefined hence i caught the error using and try catch block
 
  2. Map on traffic Conditions Page
@@ -89,11 +90,14 @@ For any scenarios that have not been automated, test the user stories manually a
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for traffic conditions for the traffic images were taken from [OneMotoring LTA](https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic-cameras.html)
 
 ### Media
-- The photos for the traffic incidents section were retrived from [
+- The photos for the traffic incidents section were retrived from [OneMotoring LTA](https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic-smart.html)
+- The photo background for the traffic conditions page was retrived from [Always Arround the World](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alwaysaroundtheworld.com%2Fsingapore%2Fsingapore-skyline%2F&psig=AOvVaw2uFf7YVVgEH0soIM7UbI8P&ust=1707491518335000&source=images&cd=vfe&opi=89978449&ved=0CBUQjhxqFwoTCNi04dyDnIQDFQAAAAAdAAAAABAE)
+- The lottie animation for the Carpark Availability Page was retrived from [LottieFiles](https://lottiefiles.com/animations/parking-spots-1JxnjiZoIc)
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for the traffic condtions page from [OneMotoring LTA](https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic-cameras.html)
+- Recieved inspiration for the logic behind mapping the markers to the map on traffic conditions using leaflet js from [OpenAI ChatGPT](https://chat.openai.com/c/9b10b3b0-f46e-45a3-989e-5d52ac49b2c4)
