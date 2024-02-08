@@ -5,7 +5,7 @@ Welcome to VehicleSG a one-stop platform to serve the needs and requirements of 
 Our team of developers consist of Isaac Tiew and MingQi who have taken up roles such as a UI/UX designer, API engineer throughout the process of the project
 
 ### Distribution of WorkLoad
-- Isaac: Carpark Availability Page, Traffic Conditions Page, Home Page
+- Isaac: Carpark Availability Page, Traffic Conditions Page
 - MingQi: Quiz Page, Checkpoint Conditions Page, Home page
  
 ## Design Process
