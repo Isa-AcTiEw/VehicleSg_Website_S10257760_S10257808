@@ -1,312 +1,137 @@
-/* To Do Style nav elements */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+*
+{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('Assets/Pan-Island-Expressway-01.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
 }
 
-nav{
-    display:flex;
+#header {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 30px 100px;
+    display: flex;
     justify-content: space-between;
-    align-items:center;
-    padding:15px;
-    border-radius: 5px;
+    align-items: center;
+    z-index: 10000;
 }
 
-.navbar-brand{
-    font-size: 30px;
-    font-family: "Lato", sans-serif;
-    padding:15px;
+.logo {
+    color: #4954c7;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
 }
 
-.nav-item a{
-    font-style: "Lato", sans-serif;
-    font-size:20px;
-    margin: 0 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
 }
 
-.nav-item a:hover {
+#header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 5px;
+    color: rgba(24, 110, 209);
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active{
     background-color: rgba(24, 110, 209,0.5);
     color: rgb(255, 255, 255);
 }
 
-/* .weather-information{
-    background-color: blue;
-    height:12rem;
-    width:120rem;
-    margin-top:0.5rem;
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: left;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.weather-information.PSI{
-    font-size: 15px;
-    font-family: "Poppins",sans-serif;
-} */
-
-.text-content-weather{
-    font-style: italic;
-    font-style: "Poppins", sans-serif;
-    margin-right:10rem;
-    color:black;
-}
-
-.PSI{
-    font-style: italic;
-    font-family: "Poppins", sans-serif;
-    padding:10 5%;
-}
-
-
-.text-content-vehicle {
-    font-size: 27px;
-    font-style: "Poppins" , sans-serif;
-    font-weight: 500;
-    display: flex;
-    align-items: flex-start;
-    width: 80rem;
-    text-align: left;
-    justify-content: left;
-    border-radius: 0.7rem;
-    margin: 20 auto;
-    background: rgba(33, 47, 103, 0.85);
-    color:#faf0b2 ;
-    flex-direction: column;
+section::before {
+    content: "" ;
     position: absolute;
-    bottom: 105%;
-    right: 5%; 
-    padding:30px;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(124, 164, 255) transparent);
+    z-index: 10;
 }
 
-#content{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width:100%;
-    height:auto;
-    padding-left: 1.5%;
-    margin-top: 30%;
+section img{
+    position: absolute;
+    top:50;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    pointer-events: none;
 }
 
-.row{
-    display:flex;
-    margin:5px;
-    justify-content: center;
-}
-
-#traffic-updates{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width:800px;
-    height:1100px;
-    background: aliceblue;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    overflow-x: hidden;
-    border-radius: 30px;
-}
-
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header h1{
+section #text {
+    position: absolute;
+    color: #3a43ac;
+    font-size: 12vw;
     text-align: center;
-    font-family: "Poppins", sans-serif; 
-}
-.traff-container{
-    border-radius:5px;
-    margin: 15px;
-    background:white;
-    width:700px;
-    height: 230px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    display:flex;
-    flex-direction: row;
-    height:100px;
+    line-height: 0.55em;
+    font-family: "Rancho", cursive;
+    transform: translateY(-15%)
 }
 
-.traff-container img{
-
-    width:60px;
-    height:60px;
-    margin:10px;
-}
-
-.traff-container p{
-    font-size:20px;
-    margin-top:15px;
-}
-.col-md-5{
-    border-radius: 10px;
-    background: aliceblue;
-    height:800px;
-    width:700px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin:15px;
-}
-
-#carpark-availability{
-    display:flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    width:700px;
-    height:800px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    overflow-x: hidden;
-    border-radius: 30px;
-}
-
-.carpark-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:0 auto;
-    width:auto;
-    height: 50px;
-    margin-top: 10px;
-}
-
-.carpark-header h1{
-    text-align: center;
+section #text span{
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
     font-family: "Poppins", sans-serif;
-    color:black;
 }
 
-.d-flex{
-    margin-top: 20px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width:700px;
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 25px;
+    background-color: rgb(124, 164, 255);
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(150px);
 }
 
-.form-control{
-    width: 500px;
-    height: 35px;
-    border-radius: 5px;
-    margin: 5px;
-}
 
-.carpark-heading{
-    justify-content: space-between;
-    align-items: center;
+.sec {
+    position: relative;
+    padding: 100px;    
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(40deg, #4158D0 0%, #7CB9E8 46%, #F0F8FF 100%);
+    width: 100%;
+    min-height: 170vh;
     display: flex;
-    flex-direction: row;
-    padding: 5px;
-    width:600px;
-    height:100px;
-    margin: 10px auto;
-}
-
-.carpark-content{
-    width:600px;
-    display: flex;
-    justify-content: space-between;
-    padding:5px 5%;
-    height: auto;
-    border-radius:5px;
-    background:white;
-    margin: 25px auto;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.loaction{
-    width:450px;
-    
-}
-.location h1{
-    font-family: "Poppins",sans-serif;
-    font-size: 20px;
-}
-
-.lots-available h1{
-    font-family: "Poppins",sans-serif;
-    font-size: 20px;
-}
-#checkpoint-updates{
-    width:700px;
-    height:600px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background: white;
-    display:flex;
-    justify-content:flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 30px;
-}
-
-.chekpoint-header{
-    display:flex;
-    margin:10px auto;
-    height:30px;
-    justify-content: center;
-    align-items:center;
-}
-
-.checkpoint-header h1{
-    margin:0 auto;
-    font-family:"Poppins",sans-serif;
-    text-align:center;
-    font-size: 15px;
-}
-
-.time-to-clear{
-    margin:20px auto;
-    width:600px;
-    border-radius:5px;
-    background-color:black;
-    height:80px;
-}
-
-#Quiz{
-    background:linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(252,182,29,1) 100%);
-    width:700px;
-    height:500px;
-    display:flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-radius: 30px;
-    bottom: 10%;
-    margin: 0 auto; 
+    justify-content: center;
+    padding: 100px;
 }
 
-.quiz-cta{
-    text-align: center;
-    font-size:30px;
-    font-family:"Poppins",sans-serif;
-}
-
-.quiz-cta img{
-    margin:10px auto;
-    width:100px;
-    height:100px;
-}
-
-.quiz-bttn{
-    margin:10px auto;
-    width:300px;
-    height:40px;
-    border-radius:5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: white;
-}
 
 footer{
     top:20%;

@@ -15,121 +15,74 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap" rel="stylesheet">
     </head>
     <body>
-      <body style="background-image: url('Assets/Pan-Island-Expressway-01.jpg'); background-repeat: no-repeat; background-position: center center; background-attachment: fixed; background-size: cover; margin: 0; padding: 0;">
+        <header id = "header"> 
+        <a href ="#" class = "logo">VehicleSG</a>
+        <ul>
+            <li><a href = "#"> Home</a></li>
+            <li><a href = "Carpark Availabilty/Carpark.html" target ="_blank"> Carpark Availability</a></li>
+            <li><a href = "Checkpoint Traffic/Checkpoint.html" target ="_blank"> Checkpoint Traffic</a></li>
+            <li><a href = "Traffic Conditions/Traffic.html" target ="_blank"> Traffic conditions</a></li>
+            <li><a href = "Quiz/Quiz.html" class = "active"> Quiz</a></li>
+        </ul>
+        </header>
+        <section>
+            <h2 id = "text"><span>Driving around</span><br> Singapore</h2>
+            <img src = "Assets/bird1.png" id = "bird1">
+            <img src = "Assets/bird2.png" id = "bird2">
+            <img src = "Assets/forest.png" id = "skyline">
+            <img src = "Assets/rocks.png" id = "rocks">
+            <img src = "Assets/water.png" id = "water">
+            <a href = "#" id ="btn">Test yourself!</a>
 
-        <nav class="navbar navbar-expand-lg bg-white fixed-top">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Vehicle SG</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <!-- Insert logo -->
-                <span class="navbar-toggler-icon">
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Carpark Availabilty/Carpark.html" target="_blank">Carpark Availability</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Checkpoint Traffic/Checkpoint.html" target="_blank">Checkpoint Traffic</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Traffic Conditions/Traffic.html" target="_blank">Traffic Conditions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Quiz/Quiz.html" target="_blank">Quiz</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
+        </section>
+        <script>
+            let text = document.getElementById("text");
+            let bird1 = document.getElementById("bird1");
+            let bird2 = document.getElementById("bird2");
+            let btn = document.getElementById("btn");
+            let rocks = document.getElementById("rocks");
+            let skyline = document.getElementById("skyline");
+            let water = document.getElementById("water");
+            let header = document.getElementById("header");
+
+            window.addEventListener("scroll", function(){
+                let value = window.scrollY;
+
+                text.style.top = 50 + value * -0.5 + "%";
+                bird1.style.top = value * -1.5 + 'px';
+                bird1.style.left = value * 2 + 'px';
+                bird2.style.top = value * -1.5 + 'px';
+                bird2.style.left = value * -5 + 'px';
+                bird1.style.top = value * -1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                bird1.style.top = value * -1.5 + 'px';
+                rocks.style.top = value * -0.12 + 'px';
+                skyline.style.top = value * 0.25 + 'px';
+                header.style.top = value * -0.5 + 'px';
+            })
+        </script>
         
-        <div class = "text-content-vehicle">
-            <h1>Vehicle SG</h1>
-            <p>VehicleSG is your one-stop destination for all things related to driving and transportation in Singapore.<br> <br>From real-time updates on traffic conditions, checkpoint statuses, and carpark availability to essential information about the Certificate of Entitlement (COE), we've got you covered. Our platform goes beyond by offering an engaging quiz to test your driving knowledge specific to Singapore. 
-            Stay informed, stay safe, and enhance your driving experience with VehicleSG.</p>
-        </div>
-        
-        <div class="container-fluid" id="content">
-          <div class="row g-2">
-
-            <div class="col-md-5" id="traffic-updates">
-              <div class = "header">
-                <h1>Traffic Updates</h1>
-              </div>
-              
+        <div class = "sec">            
+            <div class = "text-content-vehicle">
+                <h1>Vehicle SG</h1>
+                <p>VehicleSG is your one-stop destination for all things related to driving and transportation in Singapore.<br> <br>From real-time updates on traffic conditions, checkpoint statuses, and carpark availability to essential information about the Certificate of Entitlement (COE), we've got you covered. Our platform goes beyond by offering an engaging quiz to test your driving knowledge specific to Singapore. 
+                Stay informed, stay safe, and enhance your driving experience with VehicleSG.</p>
             </div>
-            <div class="col-md-5" id = "checkpoint-updates">
-              <div class="chekpoint-header">
-                <h1>Checkpoint Updates</h1>
-              </div>
-              <div class="time-to-clear">
-                
-              </div>
-            </div>
-            
-            <div class="col-md-5" id = "carpark-availability">
-              <div class = "carpark-header">
-                <h1>Carpark Availability</h1>
-              </div>
-              <div class="search-bar">
-                <form class="d-flex">
-                  <input class="form-control" type="search" placeholder="Enter the location of the carpark" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-
-              <div class = "carpark-heading">
-                <h1>Location</h1>
-                <h1>Available Lots</h1>
-              </div>
-
-              <div class = "carpark-content">
-                <div class = "location">
-                  <h1>Ang Mo Kio</h1>
-                </div>
-
-                <div class = "lots-available">
-                  <h1>49</h1>
-                </div>
-              </div>
-
-              
-            </div>
-            <div class="col-md-5" id = "Quiz">
-              <div class = "quiz-cta">
-                <div class = "img">
-                  <img src = "Assets\vehicle-car-svgrepo-com.svg">
-                </div>
-                <p>Think you know your basic driving theory <br>
-                    Take the Quiz to find out
-                </p>
-                <button class = "quiz-bttn" type="submit">Enter Quiz</button>
-                </button>
-              </div>
-            </div>
-
-            
-
-          </div>
         </div>
 
         <footer class="py-3 my-4 bg-white ">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Carpark Availability</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Checkpoint Conditions</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Traffic conditions</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Quiz</a></li>
-          </ul>
-          <p class="text-center text-muted">© 2021 Company, Inc</p>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Carpark Availability</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Checkpoint Conditions</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Traffic conditions</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Quiz</a></li>
+            </ul>
+            <p class="text-center text-muted">© 2021 Company, Inc</p>
         </footer>
-
-      
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src = "JavaScript/carpark.js"></script>
-        <script type = "module" src = "JavaScript/traffic.js"></script>
     </body>
 </html>
+      
+        

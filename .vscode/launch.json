@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "VehicleSG",
-            "url": "C:\\Users\\admin\\OneDrive\\Documents\\GitHub\\VehicleSg_Website_S10257760_S10257808\\index.html",
+            "url": "C:\\Users\\admin\\OneDrive\\Documents\\GitHub\\VehicleSg_Website_S10257760_S10257808-1\\index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
