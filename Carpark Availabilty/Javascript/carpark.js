@@ -24,41 +24,40 @@ var inputValue = "";
 //Then, add an event listener to the button
 searchButton.addEventListener('click', async function(event) {
     event.preventDefault();
-   
+    // Assuming 'parentdiv' is the container holding carpark-content divs
+    var parentdiv = document.getElementById('carpark-availability');
+
+// Select all elements with the class 'carpark-content' within the parent
+    var carparkDivs = parentdiv.querySelectorAll('.carpark-content');
+
+// reset all carpark divs
+    carparkDivs.forEach(function(carparkDiv) {
+        carparkDiv.remove();
+    });
+
     
      // prevent the form from submitting
     inputValue = inputField.value;
     if(inputValue != ""){
         retrievedata(inputValue)
-        .then(carparkcsvObj => {
-            var resultdata = carparkcsvObj;
-            fetchData().then(result => {
-                var carpark = result;
-                loadData(resultdata, carpark);
-                fetchKey().then(result => {
-                    locationCoord(result,resultdata)
-                }).catch(error => {
-                    console.error('Error fetching key:', error);
-                });
-            }).catch(error => {
-                console.error('Error fetching data:', error);
-            });
-        });
-        
+        .then(carparkcsvObj =>{
+            var resultdata = carparkcsvObj
+            var resultdata = carparkcsvObj
+            fetchData()
+            .then(result =>{
+                var carpark = result
+                loadData(resultdata,carpark)
+                addtoPage(resultdata);
                 
                 
-
-                
-                
-                
-
+            })
 
             
             
-        }
+        })
         
         
-    
+    }
 
     else if(inputValue == "")
     {
@@ -72,78 +71,32 @@ searchButton.addEventListener('click', async function(event) {
 });
 
 
-// function addtoPage(resultdata) {
+function addtoPage(resultdata) {
     
-//     var parentdiv = document.getElementById('carpark-availability')
+    var parentdiv = document.getElementById('carpark-availability')
     
-//     console.log(parentdiv)
+    console.log(parentdiv)
 
-//     resultdata.forEach(element => {
-//         var container = document.createElement('div');
-//         container.className = 'carpark-content'
-//         var locationDiv = document.createElement('div');
-//         locationDiv.className = 'location';
-//         locationDiv.innerHTML = `<h1>${element.Address}</h1>`;
+    resultdata.forEach(element => {
+        var container = document.createElement('div');
+        container.className = 'carpark-content'
+        var locationDiv = document.createElement('div');
+        locationDiv.className = 'location';
+        locationDiv.innerHTML = `<h1>${element.Address}</h1>`;
 
-//         var lotsAvailableDiv = document.createElement('div');
-//         lotsAvailableDiv.className = 'lots-available'
-//         lotsAvailableDiv.innerHTML = `<h1>${element.Lotsavail}</h1>`;
+        var lotsAvailableDiv = document.createElement('div');
+        lotsAvailableDiv.className = 'lots-available'
+        lotsAvailableDiv.innerHTML = `<h1>${element.Lotsavail}</h1>`;
 
-//         // Append the new div elements to the container
-//         container.appendChild(locationDiv);
-//         container.appendChild(lotsAvailableDiv);
-//         parentdiv.appendChild(container);
+        // Append the new div elements to the container
+        container.appendChild(locationDiv);
+        container.appendChild(lotsAvailableDiv);
+        parentdiv.appendChild(container);
         
         
-//     });
-    
-// }
-
-// retrieve access token
-let apiInfo;
-
-
-
-
-
-
-function fetchKey() {
-
-    
-    return new Promise((resolve, reject) => {
-    const data = JSON.stringify({
-            "email": "s10257760@connect.np.edu.sg",
-            "password": "IsAcTi4$@%hDk"
-          });
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-            resolve(JSON.parse(xhr.response)) 
-            
-           
-        } 
-        else {
-            reject(false); // Reject with false for failure
-        }
-        }
-    };
-    xhr.open("POST", "https://www.onemap.gov.sg/api/auth/post/getToken");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(data);
     });
-}        
-      
-      
     
-   
-
-
-
-
-
-
-  
+}
 
 
 
@@ -161,30 +114,6 @@ function loadData(resultdata,carpark){
         
     });
     return resultdata;
-}
-
-function locationCoord(key,carparkcsvObj){
-    var myHeaders = new Headers()
-    myHeaders.append("Authorization",key.access_key)
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-
-    carparkcsvObj.forEach(element => {
-        address = element.Address;
-        var streetName = address.replace(/BLK \d+\/\d+ /, "BLK ")
-        fetch(`https://www.onemap.gov.sg/api/common/elastic/search?searchVal=${streetName}&returnGeom=Y&getAddrDetails=Y`,requestOptions)
-        .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text();
-          })
-    });
-
-    
 }
 
 
@@ -233,7 +162,6 @@ async function retrievedata(inputValue) {
     await fetch("../DataFiles/HDBCarparkInformation.csv")
         .then(response => response.text())
         .then(data => {
-            console.log(data);
             const lines = data.split('\n');
             const carparkinfo = lines.splice(1);
             console.log(inputValue);
@@ -258,6 +186,7 @@ async function retrievedata(inputValue) {
                     
                 }
                 catch(error){
+                    console.error("Error is ",error.message)
                     break;
                     
                 }
