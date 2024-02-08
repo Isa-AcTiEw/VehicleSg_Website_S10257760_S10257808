@@ -164,6 +164,26 @@ footer{
     width:100%;
 }
 
+@media screen and (max-width:800px) {
+
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #header ul {
+        margin-top: 20px;
+    }
+
+    #header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #header p {
+        padding: 10px 10px;
+    }
+}
 
 
 
