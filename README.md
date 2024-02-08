@@ -13,10 +13,6 @@ to aid in the design process of the low fidelity wireframes
 Here is the link to our figma wireframe: [Figma](https://www.figma.com/file/KfDpdyELxdICHP7zi0SLYd/VehicleSG?type=design&node-id=0%3A1&mode=design&t=c263ky6W2egumvHc-1)
 
 
-
-
-
-
 ## Features
 
 After deliberating we managed to come up with 3 features which we believe are essential in culvating road readiness andd well informed motorists
@@ -54,7 +50,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
   **To retrieve the raster tiles within a long lat boundary to display accurate traffic flow information speed of traffic**
 - OneMap RetrieveThemes API from [OneMap](https://www.onemap.gov.sg/apidocs/apidocs/#getAllThemeInfo)
   **For mapping the police cameras location on the map in the traffic conditions page**
-- OneMap Authentication API from [OneMap] ()
+- OneMap Authentication API from [OneMap](https://www.onemap.gov.sg/apidocs/apidocs/#getAllThemeInfo)
+  **Retrieve authentication details for account registered with OneMap**
+
 
 
 
@@ -62,17 +60,31 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+1. Carpark Availability:
+    1. Go to the Carpark Availability Page
+    2. Try to submit the empty search field and alert message appear telling users you are unable to submit and empty request
+    3. Once submitting an address in the search field results are shown
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+    ###Bugs
+    - Once submitted an error appears due to unhandles promise in .then() statement rendering the next input as undefined hence i caught the error using and try catch block
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+ 2. Map on traffic Conditions Page
+    1. Go to the traffic conditions page and click on the various options from the dropdown menu
+    2. If CTE/SLE is clicked it loads the respective real time traffic images
+    3. If TrafficIncidents is clicked it reads from the JSON file that is retrived from the traffic-incidents API from datamall LTA
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+ 3. Quiz
+    1. Go to the Quiz page click on start quiz
+    2. Attempt to answer all 10 questions
+    3. LottieAnimation displayed and the user's score is also displayed
+
+
+ 4. Checkpoint Conditions
+    1. Go to the checkpoint conditions page
+    2. Automatically loads the real time images from the checkpoint
+    
+
+
 
 ## Credits
 
@@ -80,7 +92,7 @@ If this section grows too long, you may want to split it off into a separate fil
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+- The photos for the traffic incidents section were retrived from [
 
 ### Acknowledgements
 
