@@ -42,7 +42,7 @@ nav a:hover {
     background: transparent;
     justify-content: center;
     align-items: center;
-    background: url(../traff-assets/Mount-Faber-Park-Singapore-Skyline.jpg) 0 0 / cover no-repeat;
+    background: url(../../Assets/Mount-Faber-Park-Singapore-Skyline.jpg) 0 0 / cover no-repeat;
   }
   .traffic-text h1{
     margin-top:0px;
@@ -164,4 +164,51 @@ nav a:hover {
 
 #card-timestamp h2{
    font-size: 20px;
+}
+
+#traffic-updates{
+   margin: 30px auto;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width:800px;
+   height:800px;
+   background: aliceblue;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+   overflow-x: hidden;
+   border-radius: 30px;
+}
+
+.header-traff{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.header-traff h1{
+   text-align: center;
+   font-family: "Poppins", sans-serif; 
+}
+.traff-container{
+   border-radius:5px;
+   margin: 10px;
+   background:white;
+   width:700px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   display:flex;
+   flex-direction: row;
+   height:100px;
+}
+
+.traff-container img{
+
+   width:60px;
+   height:60px;
+   margin:10px;
+}
+
+.traff-container p{
+   font-size:20px;
+   margin-top:15px;
 }
