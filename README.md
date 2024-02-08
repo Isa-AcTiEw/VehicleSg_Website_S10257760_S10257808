@@ -33,21 +33,28 @@ After deliberating we managed to come up with 3 features which we believe are es
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [lottieAnimation](https://lottiefiles.com/)
-  **The project uses lottieAnimation js and css files for embeding lottie animations to our website
+  **The project uses lottieAnimation js and css files for embeding lottie animations to our website**
 
 - [leafletJs](https://leafletjs.com/)
-  **This project utilises leaflet js library for building maps as well as adding markers on the map from long and lat coordinates
+  **This project utilises leaflet js library for building maps as well as adding markers on the map from long and lat coordinates**
 
 - [OneMap](https://www.onemap.gov.sg/apidocs/)
-  **Project utilises leaflet js tiles from OneMap servers via a Content Delivery Network for the map of Singapore
+  **Project utilises leaflet js tiles from OneMap servers via a Content Delivery Network for the map of Singapore**
 
 ### Data Files used
 [HDBCarparksInfo](https://beta.data.gov.sg/datasets/d_23f946fa557947f93a8043bbef41dd09/view)
-**Project utilises the hdbCarparks csv information to retrive corresponding carparks and link to CarparkAvailabilityAPI
+**Project utilises the hdbCarparks csv information to retrive corresponding carparks and link to CarparkAvailabilityAPI**
 
 
 ### API's Used
 
+- CarparkAvailability API from [Data sg](https://beta.data.gov.sg/collections/85/view) for CarparkAvailability Feature
+- TrafficImages API from [Data sg](https://beta.data.gov.sg/collections/354/view) for CheckPoint conditions and Traffic Conditions feature
+- Tom Tom Traffic Flow API from [TomTom Developers](https://developer.tomtom.com/traffic-api/documentation/traffic-flow/traffic-flow-service)
+  **To retrieve the raster tiles within a long lat boundary to display accurate traffic flow information speed of traffic**
+- OneMap RetrieveThemes API from [OneMap](https://www.onemap.gov.sg/apidocs/apidocs/#getAllThemeInfo)
+  **For mapping the police cameras location on the map in the traffic conditions page**
+- OneMap Authentication API from [OneMap] ()
 
 
 
