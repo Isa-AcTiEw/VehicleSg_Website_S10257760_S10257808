@@ -41,7 +41,9 @@ button.addEventListener('click', function() {
     var childDivs = targetdiv.querySelectorAll('.traff-container')
     childDivs.forEach(function(child) {
         childDivs.remove(child);
+        
     });
+    getTraff(trafficObj)
 
 });
 
