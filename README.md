@@ -1,6 +1,12 @@
 # Introduction to the project
 Welcome to VehicleSG a one-stop platform to serve the needs and requirements of Singapore motorists as well as educate them on road safety and driving rules in an interractive quiz
 
+## Our Team
+Our team of developers consist of Isaac Tiew and MingQi who have taken up roles such as a UI/UX designer, API engineer throughout the process of the project
+
+### Distribution of WorkLoad
+Isaac - Carpark Availability Page, Traffic Conditions
+MingQi - Traffic Conditions Page, Checkpoint Conditions
  
 ## Design Process
  
