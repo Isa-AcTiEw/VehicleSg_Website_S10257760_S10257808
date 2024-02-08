@@ -1,31 +1,43 @@
-nav{
-    display:flex;
+#header {
+    background-color: white;
+    padding: 30px 100px;
+    display: flex;
     justify-content: space-between;
-    align-items:center;
-    padding:15px;
-    border-radius: 5px;
+    align-items: center;
+    z-index: 10000;
 }
 
-.navbar-brand{
-    font-size: 30px;
-    font-family: "Lato", sans-serif;
-    padding:15px;
+#header .logo {
+    color: #4954c7;
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
 }
 
-.nav-item a{
-    font-style: "Lato", sans-serif;
-    font-size:20px;
-    margin: 0 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
 }
 
-.nav-item a:hover {
+#header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 5px;
+    color: rgba(24, 110, 209);
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active{
     background-color: rgba(24, 110, 209,0.5);
     color: rgb(255, 255, 255);
 }
-
 
 
 .banner-for-carpark{
@@ -36,10 +48,6 @@ nav{
     background: url(../carpark-assets/parking.jpeg) 0 0 / cover no-repeat;
 
 }
-
-
-
-
 
 .carpark-container{
     width:100%;
@@ -207,5 +215,23 @@ nav{
     text-align:center;
 }
 
+@media screen and (max-width:800px) {
 
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    #header ul {
+        margin-top: 20px;
+    }
+
+    #header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #header p {
+        padding: 10px 10px;
+    }
+}
