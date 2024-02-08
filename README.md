@@ -43,6 +43,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [OneMap](https://www.onemap.gov.sg/apidocs/)
   **Project utilises leaflet js tiles from OneMap servers via a Content Delivery Network for the map of Singapore**
 
+- [Bootstrap](https://getbootstrap.com/)
+  **Utilised bootstrap styles and classes as well as javascript for the nav**
+
 ### Data Files used
 [HDBCarparksInfo](https://beta.data.gov.sg/datasets/d_23f946fa557947f93a8043bbef41dd09/view)
 **Project utilises the hdbCarparks csv information to retrive corresponding carparks and link to CarparkAvailabilityAPI**
