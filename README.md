@@ -24,20 +24,31 @@ After deliberating we managed to come up with 3 features which we believe are es
  
 ### Existing Features
 - Feature 1 - Allow motorists to get real time lots available through searching in the input field in carpark availability page
-- Feature 2 - Allow motorists to view real time checkpoint conditions 
-- ...
+- Feature 2 - Allow motorists to view real time checkpoint conditions on the checkpoint conditions page
+- Feature 3 - Allow motorists to view traffic conditions which includes the traffic flow on the map, traffic images from CTE and PIE expressways respectively and traffic incidents
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-### Features Left to Implement
-- Another feature idea
 
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- [lottieAnimation](https://lottiefiles.com/)
+  **The project uses lottieAnimation js and css files for embeding lottie animations to our website
+
+- [leafletJs](https://leafletjs.com/)
+  **This project utilises leaflet js library for building maps as well as adding markers on the map from long and lat coordinates
+
+- [OneMap](https://www.onemap.gov.sg/apidocs/)
+  **Project utilises leaflet js tiles from OneMap servers via a Content Delivery Network for the map of Singapore
+
+### Data Files used
+[HDBCarparksInfo](https://beta.data.gov.sg/datasets/d_23f946fa557947f93a8043bbef41dd09/view)
+**Project utilises the hdbCarparks csv information to retrive corresponding carparks and link to CarparkAvailabilityAPI
+
+
+### API's Used
+
+
 
 
 ## Testing
