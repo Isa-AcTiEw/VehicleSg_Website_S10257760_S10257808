@@ -42,14 +42,14 @@ nav a:hover {
     background: transparent;
     justify-content: center;
     align-items: center;
-    background: url(../traff-assets/singapore-urban-roads-light-trails.jpg) 0 0 / cover no-repeat;
+    background: url(../traff-assets/Mount-Faber-Park-Singapore-Skyline.jpg) 0 0 / cover no-repeat;
   }
   .traffic-text h1{
     margin-top:0px;
     font-weight:700px;
     font-size:100px;
     text-transform: uppercase;
-    color:black;
+    color: white;
     text-align: center;
     
     text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
